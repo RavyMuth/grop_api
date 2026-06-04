@@ -1,4 +1,4 @@
-    let API_KEY = localStorage.getItem('groq_key') || '';
+    let API_KEY = '__GROQ_API_KEY__';
     const API_URL = 'https://api.groq.com/openai/v1/chat/completions';
     const MODEL = 'llama-3.3-70b-versatile';
 
@@ -32,7 +32,7 @@
       sendBtn.disabled = true;
 
       try {
-        if (!API_KEY) {
+        if (!API_KEY || API_KEY === '__GROQ_API_KEY__') {
           setTimeout(() => {
             typingEl.remove();
             addMessage('Please set your API key (get one free at https://console.groq.com/keys)', 'bot');
@@ -66,8 +66,7 @@
     }
 
     // Welcome message
-    if (!API_KEY) {
-      const key = prompt('Enter your Groq API key (get free at https://console.groq.com/keys):');
-      if (key) { API_KEY = key; localStorage.setItem('groq_key', key); }
+    if (!API_KEY || API_KEY === '__GROQ_API_KEY__') {
+      addMessage('API key not configured. Run the Node.js server (node server.js) to load it from .env.', 'bot');
     }
     addMessage('Hello! I\'m a free AI assistant. Ask me anything.', 'bot');

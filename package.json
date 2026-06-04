@@ -1,0 +1,25 @@
+{
+  "name": "chat_bot_groq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RavyMuth/grop_api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/RavyMuth/grop_api/issues"
+  },
+  "homepage": "https://github.com/RavyMuth/grop_api#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
