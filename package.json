@@ -20,6 +20,10 @@
   },
   "homepage": "https://github.com/RavyMuth/grop_api#readme",
   "dependencies": {
-    "dotenv": "^17.4.2"
+    "dotenv": "^17.4.2",
+    "prismjs": "^1.30.0"
+  },
+  "devDependencies": {
+    "firebase-tools": "^15.19.1"
   }
 }

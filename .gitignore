@@ -1,2 +1,14 @@
 .env
 node_modules/
+frontend/.output/
+frontend/.nuxt/
+frontend/node_modules/
+frontend/dist/
+backend/_build/
+backend/deps/
+backend/priv/static/
+backend/*.ez
+run_phoenix.bat
+run_nuxt.bat
+backend/run.bat
+frontend/run.bat

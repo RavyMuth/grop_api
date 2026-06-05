@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .soft-card {
+    @apply bg-white dark:bg-[#16213E] rounded-soft shadow-soft
+      border border-soft-border dark:border-[#2A2A4A] transition-all duration-200;
+  }
+  .soft-card:hover {
+    @apply shadow-soft-lg;
+  }
+  .soft-input {
+    @apply w-full px-4 py-3 bg-soft-bg dark:bg-[#1A1A2E] rounded-soft-xs
+      border border-soft-border dark:border-[#2A2A4A] text-soft-text dark:text-[#EAEAEA]
+      placeholder:text-soft-text-muted dark:placeholder:text-[#A0A0B8]
+      focus:outline-none focus:border-soft-primary focus:ring-2 focus:ring-soft-primary/20
+      transition-all duration-200;
+  }
+    .soft-btn {
+    @apply px-5 py-2.5 rounded-soft-xs font-medium text-sm
+      bg-gradient-to-r from-soft-primary to-soft-secondary text-white
+      shadow-soft-button hover:shadow-soft-button
+      hover:brightness-110 active:scale-[0.97]
+      transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+    }
+  .soft-btn-ghost {
+    @apply px-4 py-2 rounded-soft-xs font-medium text-sm
+      text-soft-text-muted dark:text-[#A0A0B8]
+      hover:bg-soft-bg dark:hover:bg-[#1A1A2E]
+      active:scale-[0.97] transition-all duration-200;
+  }
+  .soft-btn-danger {
+    @apply px-5 py-2.5 rounded-soft-xs font-medium text-sm
+      bg-gradient-to-r from-soft-danger to-soft-accent text-white
+      shadow-lg shadow-soft-danger/20
+      hover:brightness-110 active:scale-[0.97] transition-all duration-200;
+  }
+  .soft-modal {
+    @apply fixed inset-0 z-50 flex items-center justify-center
+      bg-black/40 backdrop-blur-sm animate-fade-in;
+  }
+  .soft-modal-content {
+    @apply soft-card p-6 w-full max-w-md mx-4 animate-slide-up;
+  }
+  .soft-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-soft-full text-xs font-medium;
+  }
+  .scroll-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(108,92,231,0.2) transparent;
+  }
+  .scroll-thin::-webkit-scrollbar {
+    width: 5px;
+  }
+  .scroll-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scroll-thin::-webkit-scrollbar-thumb {
+    background: rgba(108,92,231,0.2);
+    border-radius: 10px;
+  }
+}
+
+pre {
+  @apply p-4 rounded-soft-xs overflow-x-auto text-sm leading-relaxed;
+}
+
+code {
+  @apply font-mono text-sm;
+}
+
+pre code {
+  @apply bg-transparent p-0;
+}

@@ -1,0 +1,16 @@
+{
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "jsx": "preserve",
+    "paths": {
+      "~/*": ["./*"],
+      "@/*": ["./*"],
+      "#/*": ["./types/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
