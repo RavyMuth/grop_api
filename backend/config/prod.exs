@@ -1,19 +1,6 @@
 import Config
 
-# Force using SSL in production. This also sets the "strict-security-transport" header,
-# known as HSTS. If you have a health check endpoint, you may want to exclude it below.
-# Note `:force_ssl` is required to be set at compile-time.
-config :chat_bot, ChatBotWeb.Endpoint,
-  force_ssl: [
-    rewrite_on: [:x_forwarded_proto],
-    exclude: [
-      # paths: ["/health"],
-      hosts: ["localhost", "127.0.0.1"]
-    ]
-  ]
+# Railway handles SSL termination at the edge, so force_ssl is not needed.
+# The app receives plain HTTP internally.
 
-# Do not print debug messages in production
 config :logger, level: :info
-
-# Runtime production configuration, including reading
-# of environment variables, is done on config/runtime.exs.

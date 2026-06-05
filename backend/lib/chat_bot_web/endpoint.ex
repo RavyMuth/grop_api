@@ -33,8 +33,15 @@ defmodule ChatBotWeb.Endpoint do
     plug Phoenix.CodeReloader
   end
 
+  cors_origin =
+    case System.get_env("CORS_ORIGIN") do
+      nil -> ["http://localhost:3000"]
+      "*" -> :any
+      origin -> String.split(origin, ",") |> Enum.map(&String.trim/1)
+    end
+
   plug CORSPlug,
-    origin: ["http://localhost:3000"],
+    origin: cors_origin,
     credentials: true,
     max_age: 86400
 
